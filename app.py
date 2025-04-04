@@ -77,7 +77,8 @@ def format_result(result):
 
 # STREAMLIT UI
 st.set_page_config(page_title="🧠 Natural Language SQL Assistant", layout="centered")
-st.title("🧠 Natural Language SQL Assistant")
+st.title("🧠 Talk2Data: AI SQL Assistant")\
+st.markdown("Natural Language SQL Assistant")
 st.markdown("Query any CSV file using plain English! Powered by **LLaMA 3** and SQLite.")
 
 uploaded_file = st.file_uploader("📂 Upload a CSV file", type=["csv"])
