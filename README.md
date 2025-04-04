@@ -1,4 +1,5 @@
 # 🧠 Talk2Data (powered by LLaMA 3 + SQLite)
+https://talk2data-ai-sql-assistant.streamlit.app/
 
 This is a Python-based AI assistant that lets you **query any CSV dataset using plain English**. It automatically converts your natural language question into an accurate SQL query using Groq's **LLaMA 3.3 70B model**, runs the query on a local SQLite database, and returns a human-readable result.
 
