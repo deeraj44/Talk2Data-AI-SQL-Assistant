@@ -6,7 +6,7 @@ import re
 import os
 import tempfile
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
 
 def clean_sql_query(response_text):
