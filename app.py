@@ -35,13 +35,13 @@ def query_database_with_llama(user_query, table_name, db_file):
 
         messages = [
             # {"role": "system", "content": f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. {schema_hint}"},
-            {"role": "system", "content": f"You are an expert in generating valid SQLite queries. "
-            "The user will ask natural language questions about a table named 'data' which can contain any dataset structure. "
-            "Only respond with a syntactically correct SQLite query. "
-            "If comparing strings (like city or gender), use LOWER() for case-insensitive comparison. "
-            "Do not include explanations or extra text — only return the SQL query."},
-            {"role": "user", "content": f"Convert this question into an SQLite query: {user_query}"},
-        ]
+              {"role": "system", "content": (
+                  f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. "
+                  f"{schema_hint} "
+                  "Ensure that all string comparisons are case-insensitive by using the LOWER() function. "
+                  "Do not include explanations or comments — respond with only the SQL query."
+              )},
+          ]
 
         data = {
             "model": "llama-3.3-70b-versatile",
