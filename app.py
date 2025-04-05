@@ -35,7 +35,7 @@ def query_database_with_llama(user_query, table_name, db_file):
 
         messages = [
             # {"role": "system", "content": f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. {schema_hint}"},
-            {"role": "system", "content": f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. {schema_hint} Always write queries that ignore case in WHERE clauses by using LOWER() or COLLATE NOCASE."}
+             {"role": "system", "content": f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. {schema_hint} Always write queries that ignore case in WHERE clauses by using LOWER() or COLLATE NOCASE."},
 
 
 
