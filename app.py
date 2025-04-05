@@ -35,7 +35,8 @@ def query_database_with_llama(user_query, table_name, db_file):
 
         messages = [
             {"role": "system", "content": f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. {schema_hint}"},
-          ]
+            {"role": "user", "content": f"Convert this question into an SQLite query: {user_query}"},
+        ]
 
         data = {
             "model": "llama-3.3-70b-versatile",
