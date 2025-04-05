@@ -36,10 +36,10 @@ def query_database_with_llama(user_query, table_name, db_file):
         messages = [
             # {"role": "system", "content": f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. {schema_hint}"},
               {"role": "system", "content": (
-                  f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. "
-                  f"{schema_hint} "
-                  "Ensure that all string comparisons are case-insensitive by using the LOWER() function. "
-                  "Do not include explanations or comments — respond with only the SQL query."
+                   f"You are an SQL expert. Only respond with a valid SQLite query for the table '{table_name}'. "
+                    f"{schema_hint} "
+                    "When comparing strings (e.g., WHERE conditions), wrap both the column name and the comparison value in LOWER(). "
+                    "This ensures case-insensitive filtering. Only return the SQL query with no explanation or extra output."
               )},
           ]
 
